@@ -5,16 +5,11 @@ import disciplina.Disciplina;
 public class Lp2 extends Disciplina{
     
     public Lp2() {
-        String codigo = "DEIN0225";
-        String area = "Linguagem de Programacao II";
-        String tipo = "OBRIGATORIA";
-        String cargaHoraria = "60";
-        String preRequisitos = "DEIN0076";
-        super.setCodigo(codigo);
-        super.setArea(area);
-        super.setTipo(tipo);
-        super.setcargaHoraria(cargaHoraria);
-        super.setPreRequitisos(preRequisitos);
+        super.setCodigo("DEIN0225");
+        super.setArea("Linguagem de Programacao II");
+        super.setTipo("OBRIGATORIA");
+        super.setcargaHoraria("60");
+        super.setPreRequitisos("DEIN0076");
     }
  
 }

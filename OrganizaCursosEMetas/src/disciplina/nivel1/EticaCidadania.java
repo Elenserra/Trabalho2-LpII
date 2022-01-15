@@ -4,15 +4,10 @@ import disciplina.Disciplina;
 
 public class EticaCidadania extends Disciplina{
     public EticaCidadania() {
-        String codigo = "DFIL0315";
-        String area = "Etica e Cidadania";
-        String tipo = "OBRIGATORIA";
-        String cargaHoraria = "60";
-        String preRequisitos = "";
-        super.setCodigo(codigo);
-        super.setArea(area);
-        super.setTipo(tipo);
-        super.setcargaHoraria(cargaHoraria);
-        super.setPreRequitisos(preRequisitos);
+        super.setCodigo("DFIL0315");
+        super.setArea( "Etica e Cidadania");
+        super.setTipo("OBRIGATORIA");
+        super.setcargaHoraria("60");
+        super.setPreRequitisos("");
     }
 }
