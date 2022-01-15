@@ -3,17 +3,8 @@ package entidade;
 import java.util.ArrayList;
 
 import disciplina.Disciplina;
-import disciplina.nivel1.Algoritmo1;
-import disciplina.nivel1.Calculo1;
-import disciplina.nivel1.CalculoVetorial;
-import disciplina.nivel1.EticaCidadania;
-import disciplina.nivel1.IntroducaoComputacao;
-import disciplina.nivel1.ProducaoTextoIngles;
-import disciplina.nivel2.AlgebraLinear;
-import disciplina.nivel2.Calculo2;
-import disciplina.nivel2.Fisica1;
-import disciplina.nivel2.Lp1;
-import disciplina.nivel2.MDL;
+import disciplina.nivel1.*;
+import disciplina.nivel2.*;
 
 public class Turma {
     private ArrayList<Aluno> listaAluno;
