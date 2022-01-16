@@ -100,18 +100,22 @@ public class App {
 							String[] disciplina = turma.listDisc();
 							
 							
-							int id;
+							String codigo;
 							System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
-							for (int i = 0; i < disciplina.length; i++) {
-								System.out.println("ID " + (i+1)+ "_ " + disciplina[i] );
+							for (int i = 0; i < disciplina.length-1; i++) {
+								System.out.println( disciplina[i] );
 							}
 							System.out.println("-------------------------------------------------"); 
 							
-							System.out.print("\nInforme a disciplina a ser cadastrada:");
-							id = input.nextInt();
+							System.out.print("\nInforme o codigo da disciplina a ser cadastrada:");
+							codigo = input.nextLine();
+							
+							if (turma.addDisciplinaParaAluno(matricula, codigo)) {
+								System.out.println("\n Disciplina cadastrada");
+							}else{
+								System.out.println("\n Error ao cadastrar disciplina");
+							}
 
-					
-							turma.addDisciplinaParaAluno(matricula, disciplina[id]);
 							
 						}else{
 							System.out.println("\nDiscente nao encontrado");

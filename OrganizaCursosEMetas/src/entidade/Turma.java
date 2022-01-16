@@ -27,6 +27,14 @@ public class Turma {
             listaDisciplina.add(new MDL());
     }
 
+    //busca matricula do aluno
+    public boolean buscaMatricula(String matricula) {
+    	if (getAluno(matricula) != null) {
+    		return true;
+    	}
+    	return false;
+    }
+
     //retorna o aluno
     public Aluno getAluno (String matricula){
         for(Aluno aluno: listaAluno){
@@ -47,12 +55,14 @@ public class Turma {
     	return false;
     }
 
+    //adicionando disciplina ao aluno
     public boolean addDisciplinaParaAluno(String matricula, String codigo) {
     	Aluno aluno = getAluno(matricula);
     	if (aluno != null) {
     		Disciplina curso = getCurso(codigo);
     		if (curso != null) {
     			aluno.addDisciplina(curso);
+                return true;
     		}
     	}
     	return false;
@@ -91,6 +101,7 @@ public class Turma {
         System.out.println("\nLista de Alunos");
         for (Aluno a: listaAluno){
             a.imprimeAluno();
+            listaDisciplina.toString();
         }
     }
 
