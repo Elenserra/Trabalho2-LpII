@@ -36,6 +36,7 @@ public class App {
         System.out.println("\n\n======== SISTEMA DE MATRICULA ========");
         System.out.println("1 - Cadastrar aluno");
         System.out.println("2 - Listar os Alunos cadastrados");
+		System.out.println("3 - Matricular disciplina");
         System.out.println("0 - Sair");              
         System.out.println("============================");
         System.out.print("Escolha uma opcao: ");
@@ -77,13 +78,6 @@ public class App {
 	                        }
 	                        
 	                            
-	                        /** 
-	                        System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
-	                        for (int i = 0; i < listDisciplina.length; i++) {
-	                            System.out.println("ID " + (i+1)+ "_ " + listDisciplina[i] );
-	                        }
-	                        System.out.println("-------------------------------------------------"); 
-	                        */
 	
 	                        break;
 	                }
@@ -92,16 +86,38 @@ public class App {
 		                turma.listar();
 		                break;
 		            }
+
 	                // Cadastrar disciplina ao Aluno
 	                case 3: {
 	                	//TODO Escolhe o Aluno
-	                	//pegar a matricula do aluno 
-	                	String[] aa = turma.listDisc();
-	                	for (String s : aa) {
-							System.out.println(s);
+	                	//pegar a matricula do aluno
+						
+						System.out.println("\n\nInforme a matricula do discente: ");
+						matricula = input.nextLine();
+			
+						if (turma.buscaMatricula(matricula)) {
+					
+							String[] disciplina = turma.listDisc();
+							
+							
+							int id;
+							System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
+							for (int i = 0; i < disciplina.length; i++) {
+								System.out.println("ID " + (i+1)+ "_ " + disciplina[i] );
+							}
+							System.out.println("-------------------------------------------------"); 
+							
+							System.out.print("\nInforme a disciplina a ser cadastrada:");
+							id = input.nextInt();
+
+					
+							turma.addDisciplinaParaAluno(matricula, disciplina[id]);
+							
+						}else{
+							System.out.println("\nDiscente nao encontrado");
 						}
-	                	matricula = "3233332";
-	                	turma.addDisciplinaParaAluno(matricula, "dein0076");
+
+						break;
 	                }
                 }
                 
