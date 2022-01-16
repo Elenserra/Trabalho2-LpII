@@ -1,21 +1,20 @@
 package entidade;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.LinkedList;
 
 import disciplina.Disciplina;
 
 public class Aluno {
     private String nome;
     private String matricula;
-    private ArrayList<Disciplina> disciplinasCursando;
-    private ArrayList<Float> notasAluno = new ArrayList<>();
+    private List<Disciplina> disciplinasCursando;
     private float totalNota = 0;
-    private String situacao = "reprovado";
     
     public Aluno(String nome, String matricula) {
         this.nome = nome;
         this.matricula = matricula;
-        this.disciplinasCursando = new ArrayList<>();
+        this.disciplinasCursando = new LinkedList<>();
     }
 
     public Aluno() {
@@ -37,20 +36,12 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public ArrayList<Disciplina> getDisciplinasCursando() {
+    public List<Disciplina> getDisciplinasCursando() {
         return disciplinasCursando;
     }
 
-    public void setDisciplinasCursando(ArrayList<Disciplina> disciplinasCursando) {
+    public void setDisciplinasCursando(List<Disciplina> disciplinasCursando) {
         this.disciplinasCursando = disciplinasCursando;
-    }
-
-    public ArrayList<Float> getNotasAluno() {
-        return notasAluno;
-    }
-
-    public void setNotasAluno(ArrayList<Float> notasAluno) {
-        this.notasAluno = notasAluno;
     }
 
     public void addDisciplina (Disciplina disciplina){
@@ -73,23 +64,6 @@ public class Aluno {
             return true;
         } else {
             return false;
-        }
-    }
-
-
-    public void insereNotas(Float nota){
-        notasAluno.add(nota);
-    }
-
-    public void calculaNotasAlunos(){
-        for (float nota: notasAluno){
-            totalNota += nota;
-        }
-
-        if (totalNota >= 7.0f){
-            this.situacao = "aprovado";
-        }else{
-            this.situacao = "reprovado";
         }
     }
     

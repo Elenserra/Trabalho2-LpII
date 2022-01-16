@@ -35,7 +35,7 @@ public class App {
     public static void menu(){
         System.out.println("\n\n======== SISTEMA DE MATRICULA ========");
         System.out.println("1 - Cadastrar aluno");
-        System.out.println("2 - Listar");
+        System.out.println("2 - Listar os Alunos cadastrados");
         System.out.println("0 - Sair");              
         System.out.println("============================");
         System.out.print("Escolha uma opcao: ");
@@ -43,9 +43,9 @@ public class App {
 
     public static void main(String[] args)  {
         
-        Turma turmaDeAlunos = new Turma();
+        Turma turma = new Turma();
 
-        String[] listDisciplina = turmaDeAlunos.listDisc();
+        String[] listDisciplina = turma.listDisc();
 
         String nome, matricula; 
         Float nota = 0.0f;
@@ -62,44 +62,50 @@ public class App {
                 
                 switch(opcao){
                 
-                //cadastro
-                case 1:
-                  
-
-                        
-                        System.out.println("\nDigite seu nome: ");
-                        nome = input.nextLine().trim().toUpperCase();
-                        System.out.println("Digite a matricula: ");
-                        matricula = input.nextLine();
-
-                        if (turmaDeAlunos.addAluno(nome, matricula)){
-                            System.out.println("\n>> Aluno cadastrado <<");
-                        } else {
-                            System.out.println("\n>> ERRor <<");
-                        }
-                        
-                            
-                        /** 
-                        System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
-                        for (int i = 0; i < listDisciplina.length; i++) {
-                            System.out.println("ID " + (i+1)+ "_ " + listDisciplina[i] );
-                        }
-                        System.out.println("-------------------------------------------------"); 
-                        */
-                          
-                              
-                        
-                            
-
-                     
-
-                       
-                    
-                break;
-            case 2:
-                turmaDeAlunos.listar();
-                break;
-            }
+	                //cadastro
+	                case 1: {
+	                        
+	                        System.out.println("\nDigite seu nome: ");
+	                        nome = input.nextLine().trim().toUpperCase();
+	                        System.out.println("Digite a matricula: ");
+	                        matricula = input.nextLine();
+	
+	                        if (turma.addAluno(nome, matricula)){
+	                            System.out.println("\n>> Aluno cadastrado <<");
+	                        } else {
+	                            System.out.println("\n>> ERRor <<");
+	                        }
+	                        
+	                            
+	                        /** 
+	                        System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
+	                        for (int i = 0; i < listDisciplina.length; i++) {
+	                            System.out.println("ID " + (i+1)+ "_ " + listDisciplina[i] );
+	                        }
+	                        System.out.println("-------------------------------------------------"); 
+	                        */
+	
+	                        break;
+	                }
+	            
+	                case 2: {
+		                turma.listar();
+		                break;
+		            }
+	                // Cadastrar disciplina ao Aluno
+	                case 3: {
+	                	//TODO Escolhe o Aluno
+	                	//pegar a matricula do aluno 
+	                	String[] aa = turma.listDisc();
+	                	for (String s : aa) {
+							System.out.println(s);
+						}
+	                	matricula = "3233332";
+	                	turma.addDisciplinaParaAluno(matricula, "dein0076");
+	                }
+                }
+                
+            
         }catch(InputMismatchException e){
             System.out.println("\n\n>>Error. Entrada invalida<<");
             input.nextLine();
