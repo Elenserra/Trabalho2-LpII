@@ -107,7 +107,7 @@ public class App {
 							}
 							System.out.println("-------------------------------------------------"); 
 							
-							System.out.print("\nInforme o codigo da disciplina a ser cadastrada:");
+							System.out.println("\nInforme o codigo da disciplina a ser cadastrada:");
 							codigo = input.nextLine();
 							
 							if (turma.addDisciplinaParaAluno(matricula, codigo)) {

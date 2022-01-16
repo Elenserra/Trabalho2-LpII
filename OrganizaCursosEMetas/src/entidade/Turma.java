@@ -101,7 +101,6 @@ public class Turma {
         System.out.println("\nLista de Alunos");
         for (Aluno a: listaAluno){
             a.imprimeAluno();
-            listaDisciplina.toString();
         }
     }
 
