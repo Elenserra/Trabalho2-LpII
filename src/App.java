@@ -118,7 +118,7 @@ public class App {
 							if (turma.addDisciplinaParaAluno(matricula, codigo)){
 								System.out.println("\n Disciplina cadastrada");
 							}else{
-								System.out.println("\n Error ao cadastrar disciplina");
+								System.out.println("\n Disciplina nao pode ser cadastrada");
 							}
 						
 			
