@@ -38,8 +38,8 @@ public class App {
     public static void menu(){
         System.out.println("\n\n======== SISTEMA DE MATRICULA ========");
         System.out.println("1 - Cadastrar aluno");
-        System.out.println("2 - Listar os Alunos cadastrados");
-		System.out.println("3 - Matricular disciplina");
+        System.out.println("2 - Listar os discentes cadastrados");
+		System.out.println("3 - Matricular disciplinas");
 		System.out.println("4 - Adicionar notas");
         System.out.println("0 - Sair");              
         System.out.println("============================");
@@ -94,8 +94,6 @@ public class App {
 
 	                // Cadastrar disciplina ao Aluno
 	                case 3: {
-	                	//TODO Escolhe o Aluno
-	                	//pegar a matricula do aluno
 						
 						System.out.println("\n\nInforme a matricula do discente: ");
 						matricula = input.nextLine();
@@ -116,28 +114,31 @@ public class App {
 							codigo = input.nextLine();
 							
 							if (turma.addDisciplinaParaAluno(matricula, codigo)){
-								System.out.println("\n Disciplina cadastrada");
+								System.out.println("\n>> Disciplina cadastrada <<");
 							}else{
-								System.out.println("\n Disciplina nao pode ser cadastrada");
+								System.out.println("\n>> Disciplina nao pode ser cadastrada <<");
 							}
 						
 			
 							
 							
 						}else{
-							System.out.println("\nDiscente nao encontrado");
+							System.out.println("\n>> Discente nao encontrado <<");
 						}
 
 						break;
 	                }
 
-					case 4:
+					//add notas para as disciplinas
+					case 4:{
 
 						System.out.println("\nInforme a matricula do discente:");
 						matricula = input.nextLine();
-					
-						turma.getAluno(matricula).imprimeAluno();;
 						
+						System.out.print("\n------------------------------------------");
+						turma.getAluno(matricula).imprimeAluno();
+						System.out.println("------------------------------------------");
+
 						System.out.println("\nInforme o codigo da disciplina:");
 						codigo = input.nextLine();
 						
@@ -158,13 +159,15 @@ public class App {
 						
 				
 						break;
+
+					}
 						
 					case 0:{
 						break;
 					}
 
 					default:
-						System.out.println("\nOpcao Invalida. Tente Novamente!");
+						System.out.println("\n>> Opcao Invalida. Tente Novamente! <<");
 						break;
                 }
                 

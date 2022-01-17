@@ -10,6 +10,7 @@ import disciplina.nivel3.ArquiteturaComputadores;
 import disciplina.nivel3.Calculo3;
 import disciplina.nivel3.EstruturaDados1;
 import disciplina.nivel3.Fisica3;
+import disciplina.nivel3.Lp2;
 import disciplina.nivel3.Sociologia;
 
 public class Turma {
@@ -31,6 +32,14 @@ public class Turma {
             listaDisciplina.add(new Fisica1());
             listaDisciplina.add(new Lp1());
             listaDisciplina.add(new MDL());
+
+            listaDisciplina.add(new Antropologia());
+            listaDisciplina.add(new ArquiteturaComputadores());
+            listaDisciplina.add(new Calculo3());
+            listaDisciplina.add(new EstruturaDados1());
+            listaDisciplina.add(new Fisica3());
+            listaDisciplina.add(new Lp2());
+            listaDisciplina.add(new Sociologia());
     }
 
     
@@ -89,6 +98,7 @@ public class Turma {
                 
         }
     }
+
     
     public Disciplina getCurso(String codigo) {
         String requisito;Disciplina curso ;

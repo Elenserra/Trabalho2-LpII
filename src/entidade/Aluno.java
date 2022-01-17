@@ -75,6 +75,8 @@ public class Aluno {
         }
     }
 
+
+
     public void imprimeNota(){
         
     }
@@ -82,8 +84,9 @@ public class Aluno {
     public void imprimeAluno() {
         System.out.println("\nMatricula: " + this.matricula + " - Nome: " + this.nome );
         for (Disciplina disciplina : disciplinasCursando) {
-            disciplina.imprimeDisciplina();
-            
+            if (disciplina!=null){
+                disciplina.imprimeDisciplina();
+            }
         }
        
     }

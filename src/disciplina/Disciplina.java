@@ -134,7 +134,6 @@ public abstract class Disciplina{
 	}
 
 
-
     public void imprimeDisciplina() {
         System.out.println( codigo + " _" + area +  "   " + cargaHoraria + "H  " + " " + tipo
                 + "  " + preRequitisos );
