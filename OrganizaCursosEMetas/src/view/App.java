@@ -46,7 +46,7 @@ public class App {
         System.out.print("Escolha uma opcao: ");
     }
 
-    public static void main(String[] args)  {
+    public static void main1(String[] args)  {
         
         Turma turma = new Turma();
 
@@ -155,7 +155,7 @@ public class App {
 						nota[2] = nota3;
 						turma.notaDisciplina(matricula, codigo, nota);
 						break;
-						
+
 					case 0:{
 						break;
 					}

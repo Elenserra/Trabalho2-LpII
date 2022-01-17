@@ -77,13 +77,14 @@ public class Turma {
             aluno.setNota(nota);
             Disciplina curso = getCurso(codigo);
             if (curso!=null){
-                curso.calculaNotasAlunos();
+                //curso.calculaNotasAlunos();
             }
                 
         }
     }
     
     public Disciplina getCurso(String codigo) {
+        Disciplina curso = getCurso(codigo);
     	if (codigo.equalsIgnoreCase("dein0076"))
     		return new Algoritmo1();
     	
@@ -102,7 +103,7 @@ public class Turma {
         if (codigo.equalsIgnoreCase("DLER0845"))
             return new ProducaoTextoIngles();
         
-        if (codigo.equalsIgnoreCase("DEMA0342"))
+        if (codigo.equalsIgnoreCase("DEMA0342")) //preRequisito DEMA0340
             return new AlgebraLinear();
         
         if (codigo.equalsIgnoreCase("DEMA0341"))

@@ -1,4 +1,4 @@
-package view;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -141,7 +141,7 @@ public class App {
 						System.out.println("\nInforme o codigo da disciplina:");
 						codigo = input.nextLine();
 						
-						float nota1, nota2, nota3;
+						float nota1, nota2, nota3, nota4, nota5;
 									
 						System.out.println("Nota 1");
 						nota1 = input.nextFloat();
@@ -149,11 +149,14 @@ public class App {
 						nota2 = input.nextFloat();
 						System.out.println("Nota 3");
 						nota3 = input.nextFloat();
-														
+
 						nota[0] = nota1;
 						nota[1] = nota2;
 						nota[2] = nota3;
+
 						turma.notaDisciplina(matricula, codigo, nota);
+						
+				
 						break;
 						
 					case 0:{

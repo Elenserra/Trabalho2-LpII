@@ -80,7 +80,7 @@ public abstract class Disciplina{
     }
    
     public float media (float m1, float m2, float m3) {
-    	return (m1+m2+m3)/3;
+        return  (m1+m2+m3)/3;
     }
     
     public float getMin(float a, float b, float c) {

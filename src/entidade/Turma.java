@@ -78,12 +78,14 @@ public class Turma {
             Disciplina curso = getCurso(codigo);
             if (curso!=null){
                 curso.situacaoDoAluno();
+                System.out.println(curso.getSituacao());
             }
                 
         }
     }
     
     public Disciplina getCurso(String codigo) {
+        String requisito;Disciplina curso ;
     	if (codigo.equalsIgnoreCase("dein0076"))
     		return new Algoritmo1();
     	
@@ -102,21 +104,50 @@ public class Turma {
         if (codigo.equalsIgnoreCase("DLER0845"))
             return new ProducaoTextoIngles();
         
-        if (codigo.equalsIgnoreCase("DEMA0342"))
-            return new AlgebraLinear();
+        if (codigo.equalsIgnoreCase("DEMA0342")){
+            requisito = "DEMA0340";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new AlgebraLinear();
+            else
+                return null;
+        }
+        if (codigo.equalsIgnoreCase("DEMA0341")){
+            requisito = "DEMA0339";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new Calculo2();
+            else
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DEFI0254")){
+            requisito = "DEMA0339";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new Fisica1();
+            else
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DEIN0030")){
+            requisito = "DEIN0076";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new Lp1();
+            else
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DEIN0078")){
+            requisito = "DEIN0076";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new MDL();
+            else
+                return null;
+        }
         
-        if (codigo.equalsIgnoreCase("DEMA0341"))
-            return new Calculo2();
-
-        if (codigo.equalsIgnoreCase("DEFI0254"))
-            return new Fisica1();
-
-        if (codigo.equalsIgnoreCase("DEIN0030"))
-            return new Lp1();
-        
-        if (codigo.equalsIgnoreCase("DEIN0078"))
-            return new MDL();
-
     	return null;
     }
 

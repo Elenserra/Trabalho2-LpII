@@ -111,7 +111,7 @@ public abstract class Disciplina{
         	media = media(nota1, nota2, nota3);
         	if (media >= 7.0f){
                 this.setSituacao("aprovado");
-        	} 
+        	}
         	//TODO nota final
         }
     }
