@@ -42,7 +42,7 @@ public class App {
 		System.out.println("3 - Matricular disciplinas");
 		System.out.println("4 - Adicionar notas");
         System.out.println("0 - Sair");              
-        System.out.println("============================");
+        System.out.println("======================================");
         System.out.print("Escolha uma opcao: ");
     }
 
@@ -105,11 +105,11 @@ public class App {
 							
 							
 							
-							System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
+							System.out.println("\n---------------- ESTRUTURA CURRICULAR - CP ----------------"); 
 							for (int i = 0; i < disciplina.length-1; i++) {
 								System.out.println( disciplina[i] );
 							}
-							System.out.println("-------------------------------------------------"); 
+							System.out.println("-----------------------------------------------------------"); 
 							
 							System.out.println("\nInforme o codigo da disciplina a ser cadastrada:");
 							codigo = input.nextLine();

@@ -144,7 +144,6 @@ public class Turma {
         System.out.println("\n\n------------LISTA DE ALUNOS------------");
         for (Aluno a: listaAluno){
             a.imprimeAluno();
-            a.imprimeNota();
 
         }
         System.out.println("\n\n---------------------------------------");
