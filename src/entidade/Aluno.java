@@ -76,10 +76,7 @@ public class Aluno {
     }
 
 
-
-    public void imprimeNota(){
-        
-    }
+ 
     
     public void imprimeAluno() {
         System.out.println("\nMatricula: " + this.matricula + " - Nome: " + this.nome );
