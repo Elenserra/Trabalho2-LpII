@@ -9,12 +9,20 @@ public class Aluno {
     private String nome;
     private String matricula;
     private List<Disciplina> disciplinasCursando;
-    private float total = 0;
+    private float[] nota;
     
     public Aluno(String nome, String matricula) {
         this.nome = nome;
         this.matricula = matricula;
         this.disciplinasCursando = new LinkedList<>();
+    }
+
+    public float[] getNota() {
+        return nota;
+    }
+
+    public void setNota(float[] nota2) {
+        this.nota = nota2;
     }
 
     public Aluno() {
@@ -66,11 +74,16 @@ public class Aluno {
             return false;
         }
     }
+
+    public void imprimeNota(){
+        
+    }
     
     public void imprimeAluno() {
-        System.out.println("\nMatricula: " + this.matricula + " - Nome: " + this.nome);
+        System.out.println("\nMatricula: " + this.matricula + " - Nome: " + this.nome );
         for (Disciplina disciplina : disciplinasCursando) {
             disciplina.imprimeDisciplina();
+            
         }
        
     }

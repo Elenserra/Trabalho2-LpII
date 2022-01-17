@@ -40,6 +40,7 @@ public class App {
         System.out.println("1 - Cadastrar aluno");
         System.out.println("2 - Listar os Alunos cadastrados");
 		System.out.println("3 - Matricular disciplina");
+		System.out.println("4 - Adicionar notas");
         System.out.println("0 - Sair");              
         System.out.println("============================");
         System.out.print("Escolha uma opcao: ");
@@ -52,7 +53,7 @@ public class App {
 		Disciplina disc;
         String[] listDisciplina = turma.listDisc();
 
-        String nome, matricula; 
+        String nome, matricula, codigo; 
         float[] nota = new float[3];
         int opcao=1;
 
@@ -104,7 +105,7 @@ public class App {
 							String[] disciplina = turma.listDisc();
 							
 							
-							String codigo;
+							
 							System.out.println("\n----------- ESTRUTURA CURRICULAR - CP -----------"); 
 							for (int i = 0; i < disciplina.length-1; i++) {
 								System.out.println( disciplina[i] );
@@ -115,29 +116,12 @@ public class App {
 							codigo = input.nextLine();
 							
 							if (turma.addDisciplinaParaAluno(matricula, codigo)){
-
-								float nota1, nota2, nota3;
-								
-								System.out.println("Nota 1");
-								nota1 = input.nextFloat();
-								System.out.println("Nota 2");
-								nota2 = input.nextFloat();
-								System.out.println("Nota 3");
-								nota3 = input.nextFloat();
-																
-								nota[0] = nota1;
-								nota[1] = nota2;
-								nota[2] = nota3;
-								turma.addNotaDisciplina(matricula, codigo, nota);
-
-							
 								System.out.println("\n Disciplina cadastrada");
 							}else{
 								System.out.println("\n Error ao cadastrar disciplina");
 							}
 						
-
-							
+			
 							
 							
 						}else{
@@ -147,6 +131,31 @@ public class App {
 						break;
 	                }
 
+					case 4:
+
+						System.out.println("\nInforme a matricula do discente:");
+						matricula = input.nextLine();
+					
+						turma.getAluno(matricula).imprimeAluno();;
+						
+						System.out.println("\nInforme o codigo da disciplina:");
+						codigo = input.nextLine();
+						
+						float nota1, nota2, nota3;
+									
+						System.out.println("Nota 1");
+						nota1 = input.nextFloat();
+						System.out.println("Nota 2");
+						nota2 = input.nextFloat();
+						System.out.println("Nota 3");
+						nota3 = input.nextFloat();
+														
+						nota[0] = nota1;
+						nota[1] = nota2;
+						nota[2] = nota3;
+						turma.notaDisciplina(matricula, codigo, nota);
+						break;
+						
 					case 0:{
 						break;
 					}
