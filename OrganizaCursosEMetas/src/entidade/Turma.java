@@ -71,12 +71,12 @@ public class Turma {
     	return false;
     }
 
-    public void addNotas(String matricula,String codigo, float[] nota){
+    public void addNotaDisciplina(String matricula,String codigo, float[] nota){
         Aluno aluno = getAluno(matricula);
         if (aluno!=null){
             Disciplina curso = getCurso(codigo);
             if (curso != null){
-                System.out.println(curso.calculaNoasAlunos());
+                curso.calculaNotasAlunos();
                 
                 
             }

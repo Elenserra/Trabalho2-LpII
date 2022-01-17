@@ -128,7 +128,7 @@ public class App {
 								nota[0] = nota1;
 								nota[1] = nota2;
 								nota[2] = nota3;
-								turma.addNotas(matricula, codigo, nota);
+								turma.addNotaDisciplina(matricula, codigo, nota);
 
 							
 								System.out.println("\n Disciplina cadastrada");

@@ -93,13 +93,27 @@ public abstract class Disciplina{
     	return min;
     }
     
-    public String calculaNoasAlunos(){
+    public void calculaNotasAlunos(){
     	float nota1 = notas[0], nota2 = notas[1], nota3 = notas[2];
     	float media = media(nota1, nota2, nota3);
         if (media >= 7.0f){
-            return "aprovado";
+            this.setSituacao("aprovado");
+        }else{
+        	float min = getMin(nota1, nota2, nota3);
+        	
+        	if (min == nota1) {
+        		nota1 = notas[4];        		
+        	} else if (min == nota2) {
+        		nota2 = notas[4];        		
+        	} else if (min == nota3) {
+        		nota3 = notas[4];        		
+        	}
+        	media = media(nota1, nota2, nota3);
+        	if (media >= 7.0f){
+                this.setSituacao("aprovado");
+        	} 
+        	//TODO nota final
         }
-        return "reprovado";
     }
 
 	public String getSituacao() {
