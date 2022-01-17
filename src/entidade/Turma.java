@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import disciplina.Disciplina;
 import disciplina.nivel1.*;
 import disciplina.nivel2.*;
+import disciplina.nivel3.Antropologia;
+import disciplina.nivel3.ArquiteturaComputadores;
+import disciplina.nivel3.Calculo3;
+import disciplina.nivel3.EstruturaDados1;
+import disciplina.nivel3.Fisica3;
+import disciplina.nivel3.Sociologia;
 
 public class Turma {
     private ArrayList<Aluno> listaAluno;
@@ -147,7 +153,49 @@ public class Turma {
             else
                 return null;
         }
+
+        if (codigo.equalsIgnoreCase("DSOC0055"))
+            return new Antropologia();
+
+        if (codigo.equalsIgnoreCase("DEIN0079")){
+            requisito = "DEIN0078";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new ArquiteturaComputadores();
+            else
+                return null;
+        }
         
+        if (codigo.equalsIgnoreCase("DEMA0338")){
+            requisito = "DEMA0341";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new Calculo3();
+            else
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DEIN0080")){
+            requisito = "DEIN0030";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new EstruturaDados1();
+            else
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DEFI0255")){
+            requisito = "DEFI0254";
+            curso = getCurso(requisito);
+            if (curso.getSituacao().equalsIgnoreCase("aprovado"))
+                return new Fisica3();
+            else 
+                return null;
+        }
+
+        if (codigo.equalsIgnoreCase("DSOC0313"))
+            return new Sociologia();
+
     	return null;
     }
 
