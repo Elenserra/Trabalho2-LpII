@@ -9,7 +9,7 @@ public class Aluno {
     private String nome;
     private String matricula;
     private List<Disciplina> disciplinasCursando;
-    private float totalNota = 0;
+    private float total = 0;
     
     public Aluno(String nome, String matricula) {
         this.nome = nome;
@@ -68,7 +68,11 @@ public class Aluno {
     }
     
     public void imprimeAluno() {
-        System.out.println("Matricula: " + matricula + " - Nome: " + nome);
+        System.out.println("\nMatricula: " + this.matricula + " - Nome: " + this.nome);
+        for (Disciplina disciplina : disciplinasCursando) {
+            disciplina.imprimeDisciplina();
+        }
+       
     }
 
 

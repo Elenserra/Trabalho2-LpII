@@ -2,6 +2,9 @@ package view;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import disciplina.Disciplina;
+import entidade.Aluno;
 import entidade.Turma;
 
 /**
@@ -46,11 +49,12 @@ public class App {
         
         Turma turma = new Turma();
 
+		Disciplina disc;
         String[] listDisciplina = turma.listDisc();
 
         String nome, matricula; 
-        Float nota = 0.0f;
-        int opcao=0;
+        float[] nota = new float[3];
+        int opcao=1;
 
 
         Scanner input = new Scanner(System.in);
@@ -66,24 +70,24 @@ public class App {
 	                //cadastro
 	                case 1: {
 	                        
-	                        System.out.println("\nDigite seu nome: ");
-	                        nome = input.nextLine().trim().toUpperCase();
-	                        System.out.println("Digite a matricula: ");
-	                        matricula = input.nextLine();
-	
-	                        if (turma.addAluno(nome, matricula)){
-	                            System.out.println("\n>> Aluno cadastrado <<");
-	                        } else {
-	                            System.out.println("\n>> ERRor <<");
-	                        }
+	                    System.out.println("\nDigite seu nome: ");
+	                    nome = input.nextLine().trim().toUpperCase();
+						System.out.println("Digite a matricula: ");
+						matricula = input.nextLine().trim().toLowerCase();
+
+	                    if (turma.addAluno(nome, matricula)){
+	                        System.out.println("\n>> Aluno cadastrado <<");
+	                    } else {
+	                        System.out.println("\n>> ERRor <<");
+	                    }
 	                        
-	                            
-	
-	                        break;
+	   
+	                    break;
 	                }
 	            
 	                case 2: {
 		                turma.listar();
+						
 		                break;
 		            }
 
@@ -110,12 +114,31 @@ public class App {
 							System.out.println("\nInforme o codigo da disciplina a ser cadastrada:");
 							codigo = input.nextLine();
 							
-							if (turma.addDisciplinaParaAluno(matricula, codigo)) {
+							if (turma.addDisciplinaParaAluno(matricula, codigo)){
+
+								float nota1, nota2, nota3;
+								
+								System.out.println("Nota 1");
+								nota1 = input.nextFloat();
+								System.out.println("Nota 2");
+								nota2 = input.nextFloat();
+								System.out.println("Nota 3");
+								nota3 = input.nextFloat();
+																
+								nota[0] = nota1;
+								nota[1] = nota2;
+								nota[2] = nota3;
+								turma.addNotas(matricula, codigo, nota);
+
+							
 								System.out.println("\n Disciplina cadastrada");
 							}else{
 								System.out.println("\n Error ao cadastrar disciplina");
 							}
+						
 
+							
+							
 							
 						}else{
 							System.out.println("\nDiscente nao encontrado");
@@ -123,14 +146,23 @@ public class App {
 
 						break;
 	                }
+
+					case 0:{
+						break;
+					}
+
+					default:
+						System.out.println("\nOpcao Invalida. Tente Novamente!");
+						break;
                 }
                 
             
-        }catch(InputMismatchException e){
-            System.out.println("\n\n>>Error. Entrada invalida<<");
-            input.nextLine();
-        }
-    }while(opcao != 0);
+			}catch(InputMismatchException e){
+				System.out.println("\n\n>>Error. Entrada invalida<<");
+				input.nextLine();
+			}
+			
+		}while(opcao != 0);
 
     
         

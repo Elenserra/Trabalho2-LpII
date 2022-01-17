@@ -13,7 +13,7 @@ public abstract class Disciplina{
     private float notas[] = new float[6];
 
     private Aluno aluno; 
-    
+
     public void setNotas(int i, float nota) {
     	if (i <= 6 && i >=0)
     		this.notas[i] = nota;
@@ -93,33 +93,13 @@ public abstract class Disciplina{
     	return min;
     }
     
-    public void calculaNotasAlunos(){
+    public String calculaNoasAlunos(){
     	float nota1 = notas[0], nota2 = notas[1], nota3 = notas[2];
     	float media = media(nota1, nota2, nota3);
         if (media >= 7.0f){
-            this.setSituacao("aprovado");
-        }else{
-        	float min = getMin(nota1, nota2, nota3);
-        	
-        	if (min == nota1) {
-        		nota1 = notas[4];        		
-        	} else if (min == nota2) {
-        		nota2 = notas[4];        		
-        	} else if (min == nota3) {
-        		nota3 = notas[4];        		
-        	}
-        	media = media(nota1, nota2, nota3);
-        	if (media >= 7.0f){
-                this.setSituacao("aprovado");
-        	} 
-        	//TODO nota final
+            return "aprovado";
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Disciplina [area=" + area + ", cargaHoraria=" + cargaHoraria + ", codigo=" + codigo + ", preRequitisos="
-                + preRequitisos + ", tipo=" + tipo + "]";
+        return "reprovado";
     }
 
 	public String getSituacao() {
@@ -130,6 +110,13 @@ public abstract class Disciplina{
 		this.situacao = situacao;
 	}
 
+
+
+    public void imprimeDisciplina() {
+        System.out.println( codigo + " _" + area +  "   " + cargaHoraria + "H  " + " " + tipo
+                + "  " + preRequitisos );
+            
+    }
     
     
 }
