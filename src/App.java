@@ -87,6 +87,7 @@ public class App {
 	                }
 	            
 	                case 2: {
+
 		                turma.listar();
 						
 		                break;
@@ -116,7 +117,7 @@ public class App {
 							if (turma.addDisciplinaParaAluno(matricula, codigo)){
 								System.out.println("\n>> Disciplina cadastrada <<");
 							}else{
-								System.out.println("\n>> Disciplina nao pode ser cadastrada <<");
+								System.out.println("\n>> Error ao tentar cadastrar disciplina <<");
 							}
 						
 			
@@ -142,7 +143,7 @@ public class App {
 						System.out.println("\nInforme o codigo da disciplina:");
 						codigo = input.nextLine();
 						
-						float nota1, nota2, nota3, nota4, nota5;
+						float nota1, nota2, nota3;
 									
 						System.out.println("Nota 1");
 						nota1 = input.nextFloat();
@@ -155,7 +156,8 @@ public class App {
 						nota[1] = nota2;
 						nota[2] = nota3;
 
-						turma.notaDisciplina(matricula, codigo, nota);
+						
+						
 						
 				
 						break;
@@ -169,6 +171,7 @@ public class App {
 					default:
 						System.out.println("\n>> Opcao Invalida. Tente Novamente! <<");
 						break;
+
                 }
                 
             
